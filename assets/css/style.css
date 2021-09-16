@@ -253,6 +253,9 @@ img {
         padding-top: calc(40px*var(--scale));
         padding-bottom: calc(50px*var(--scale));
     }
+    .gallery{
+        padding-bottom: calc(50px*var(--scale));
+    }
     .gallery-item {
         flex: 1 0 18rem;
         max-width: 18rem;
@@ -278,6 +281,9 @@ img {
     }
     .hero{
         padding-top: calc(60px*var(--scale));
+        padding-bottom: calc(100px*var(--scale));
+    }
+    .gallery{
         padding-bottom: calc(100px*var(--scale));
     }
     /*html {
