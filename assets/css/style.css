@@ -1,3 +1,6 @@
+:root {
+    --scale: 0.65;
+}
 
 @font-face {
     font-family: "SeatBlack";
@@ -22,24 +25,300 @@
     font-style: normal;
     font-display: swap;
 }
+.seatBlack{font-family: "SeatBlack",sans-serif}
+.seatBold{font-family: "SeatBold",sans-serif}
+.seatRegular{font-family: "SeatRegular",sans-serif}
 
-.seatBlack {
-    font-family: "SeatBlack",sans-serif
+html {
+    font-family: sans-serif;
+    line-height: 1.2;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
 }
 
-.seatBold {
-    font-family: "SeatBold",sans-serif
+body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #0f0f0f;
+    font-size: 1rem;
+    font-family: "SeatRegular",sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
-.seatRegular {
-    font-family: "SeatRegular",sans-serif
+.hero--title{
+    text-align: center;
+    max-width: calc(1024px*var(--scale));
+    margin: 0 auto;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.11;
+    font-size: calc(2.5rem * var(--scale));
+    /*transition: all 250ms ease;*/
+    /*transition-delay: 0s;*/
 }
-:root {
-    --scale: 1;
-    --scale-element: 1;
-    --scale-font: 1;
+
+.navbar-text {
+    font-size: calc(16px * var(--scale));
 }
+
+.intro {
+    opacity: 1;
+    transform: translateY(0);
+    padding-top: calc(25px*var(--scale));
+    padding-bottom: calc(10px*var(--scale));
+    transition: all 1.2s ease;
+    transition-delay: 0s;
+}
+.logo{
+    padding-top: calc(100px*var(--scale));
+}
+.hero{
+    padding-top: calc(20px*var(--scale));
+    padding-bottom: calc(40px*var(--scale));
+}
+
+img {
+    display: block;
+}
+
+
+/**
+ * ------------------------------------------------------------------------
+ * Gallery Section
+ * ------------------------------------------------------------------------
+ */
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem -1rem;
+    padding-bottom: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1 0 10rem;
+    margin:0.25rem;
+    color: #fff;
+    cursor: pointer;
+    background: #000;
+}
+
+.gallery-item:hover .gallery-image{
+    opacity: .85;
+}
+
+.gallery-item-info {
+    display: none;
+}
+
+.gallery-item-info li {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.gallery-item-likes {
+    margin-right: 2.2rem;
+}
+
+.gallery-item-type{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+    visibility: hidden;
+    transition: all 250ms ease-in-out;
+}
+
+.gallery-item:hover .gallery-item-type{visibility: visible}
+
+.btn-download{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: all 0.15s ease-in-out;
+    border: 0;
+    outline:0 ;
+    width: 38px;
+    height: 38px;
+    backdrop-filter: blur(4px);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255,1) url('../images/file_download_black_24dp.svg') no-repeat center; background-size: 26px
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: all 250ms ease-in-out;
+}
+
+
+/**
+ * ------------------------------------------------------------------------
+ * Utils
+ * ------------------------------------------------------------------------
+ */
+
+.animate__animated.animate__delay-100ms {
+    -webkit-animation-delay: 100ms;
+    animation-delay: 100ms;
+}
+
+.animate__animated.animate__delay-200ms {
+    -webkit-animation-delay: 200ms;
+    animation-delay: 200ms;
+}
+
+.animate__animated.animate__delay-300ms {
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+}
+.animate__animated.animate__delay-400ms {
+    -webkit-animation-delay: 400ms;
+    animation-delay: 400ms;
+}
+.animate__animated.animate__delay-500ms {
+    -webkit-animation-delay:500ms;
+    animation-delay:500ms;
+}
+
+
+/**
+ * ------------------------------------------------------------------------
+ * Modifiers
+ * ------------------------------------------------------------------------
+ */
 
 .bg-ibiza{
     background: #d40028;
+}
+.navbar-light .navbar-text {
+    color: #0f0f0f;
+}
+.btn-bz {
+    font-size: calc(14px*var(--scale));
+    border-radius: 0.3rem;
+    padding: calc(8px*var(--scale)) calc(28px*var(--scale));
+}
+.btn-outline-ibiza{ border-width: 2px}
+
+
+/**
+ * ------------------------------------------------------------------------
+ * Media Queries
+ * ------------------------------------------------------------------------
+ */
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    :root {
+        --scale-font: 1;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    :root {
+        --scale: 0.75;
+    }
+    .navbar-text {
+        font-size: calc(1.3rem * var(--scale));
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    :root {
+        --scale: 0.9;
+    }
+    .hero{
+        padding-top: calc(40px*var(--scale));
+        padding-bottom: calc(50px*var(--scale));
+    }
+    .gallery-item {
+        flex: 1 0 18rem;
+        max-width: 18rem;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    :root {
+        --scale: 1;
+    }
+    .hero--title{
+        font-size: calc(3.5rem * var(--scale));
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }
+
+@media (min-width: 1500px){
+    :root {
+        --scale: 1.1875;
+    }
+    .hero{
+        padding-top: calc(60px*var(--scale));
+        padding-bottom: calc(100px*var(--scale));
+    }
+    /*html {
+        font-size: calc(16px*var(--scale));
+    }*/
+    .container {
+        max-width: 1520px;
+    }
+    .hero--title{
+
+        font-size: calc(4.5rem * var(--scale));
+    }
+
+    .navbar-text {
+        font-size: calc(16px * var(--scale));
+    }
+}
+
+@supports (display: grid) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: .25rem;
+    }
+
+    .gallery-item {
+        position: relative;
+        flex: 1 0 10rem;
+        margin:0;
+        max-width: unset;
+    }
+    .gallery {
+        width: auto;
+        margin: 0;
+    }
+
+    @media (min-width: 992px) {
+        .gallery {
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+            grid-gap: .25rem;
+        }
+    }
+
 }
